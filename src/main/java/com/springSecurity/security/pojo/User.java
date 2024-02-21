@@ -6,7 +6,7 @@ import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.print.attribute.standard.MediaSize;
-@NamedQuery(name = "User.findByEmail",query = "select u from User where u.email=:email")
+@NamedQuery(name = "User.findByEmail",query = "select u from User u where u.email=:email")
 @Entity
 @Data
 @DynamicUpdate

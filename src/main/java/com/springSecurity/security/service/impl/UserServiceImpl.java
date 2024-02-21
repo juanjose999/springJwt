@@ -27,7 +27,7 @@ public class UserServiceImpl implements UserService {
             if(validateSigUpMap(requestMap)){
                 User user = userDao.findByEmail(requestMap.get("email"));
                 if(Objects.isNull(user)){
-
+                    userDao.save(getUserFromMap(requestMap));
                     return FacturaUtils.getResponseEntity("El usuario se ha registrado con exito.", HttpStatus.CREATED);
 
                 }else {
